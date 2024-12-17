@@ -10,7 +10,7 @@ interface BannerProps {
   grid?: number;
   className?: string;
   girdClassName?: string;
-  lang: string;
+  // lang: string;
 }
 
 
@@ -19,7 +19,7 @@ const BannerGrid: React.FC<BannerProps> = ({
   grid = 3,
   girdClassName,
   className = 'mb-3 xl:mb-6',
-  lang,
+  // lang,
 }) => {
   const { width } = useWindowSize();
   return (
@@ -33,7 +33,7 @@ const BannerGrid: React.FC<BannerProps> = ({
                     banner={banner}
                     effectActive={true}
                     className="w-full overflow-hidden rounded"
-                    lang={lang}
+                    // lang={lang}
                 />
             ))}
         </div>

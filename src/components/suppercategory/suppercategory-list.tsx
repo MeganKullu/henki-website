@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { ROUTES } from '@utils/routes';
 import Link from 'next/link';
-import { useTranslation } from 'src/app/i18n/client';
+// 
 
 interface Props {
   className?: string;
@@ -14,7 +14,7 @@ const SupperCategoryList: React.FC<Props> = ({
   data,
   lang,
 }) => {
-  const { t } = useTranslation(lang, 'common');
+  // const { t } = useTranslation(lang, 'common');
   return (
     <div className={cn('heightFull', className)}>
       <h3 className="text-[20px] text-skin-base font-medium block-title border-0 ">
@@ -27,7 +27,7 @@ const SupperCategoryList: React.FC<Props> = ({
               <li className="pb-2 hover:text-skin-primary" key={`${idx}`}>
                 <Link
                   href={{
-                      pathname: `/${lang}${ROUTES.SEARCH}`,
+                    pathname: `/${lang}${ROUTES.SEARCH}`,
                     query: { category: currentItem.slug },
                   }}
                 >
@@ -39,11 +39,11 @@ const SupperCategoryList: React.FC<Props> = ({
           <li className=" text-skin-primary hover:text-skin-primary">
             <Link
               href={{
-                  pathname: `/${lang}${ROUTES.SEARCH}`,
+                pathname: `/${lang}${ROUTES.SEARCH}`,
                 query: { category: data?.slug },
               }}
             >
-              {t('text-view-all-categories')}
+              text-view-all-categories
             </Link>
           </li>
         </ul>

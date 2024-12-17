@@ -17,7 +17,7 @@ import cn from 'classnames';
 import Search from '@components/common/search';
 import { FiMenu } from 'react-icons/fi';
 import CategoryDropdownMenu from '@components/category/category-dropdown-menu';
-import { useTranslation } from 'src/app/i18n/client';
+
 const AuthMenu = dynamic(() => import('@layouts/header/auth-menu'), {
   ssr: false,
 });
@@ -29,7 +29,7 @@ type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 const { site_header } = siteSettings;
 
 function Header({ lang }: { lang: string }) {
-  const { openSidebar,displaySearch,openSearch, isAuthorized, displayMobileSearch } = useUI();
+  const { openSidebar, displaySearch, openSearch, isAuthorized, displayMobileSearch } = useUI();
   const { openModal } = useModalAction();
   const siteSearchRef = useRef() as DivElementRef;
   const { t } = useTranslation(lang, 'common');

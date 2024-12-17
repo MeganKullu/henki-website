@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { FaChevronDown } from 'react-icons/fa';
 import LocationIcon from '@components/icons/location-icon';
 import { useModalAction } from '@components/common/modal/modal.context';

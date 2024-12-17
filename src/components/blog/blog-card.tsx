@@ -3,9 +3,9 @@ import Image from '@components/ui/image';
 import Link from '@components/ui/link';
 import { ROUTES } from '@utils/routes';
 import useWindowSize from '@utils/use-window-size';
-import { useTranslation } from 'src/app/i18n/client';
-import {productPlaceholder} from '@assets/placeholders';
-import {getCountview} from "@utils/get-countview";
+
+import { productPlaceholder } from '@assets/placeholders';
+import { getCountview } from "@utils/get-countview";
 
 interface BlogProps {
     blog?: any;
@@ -14,9 +14,9 @@ interface BlogProps {
 }
 
 
-const BlogCard: React.FC<BlogProps> = ({blog, className,lang}) => {
-    const {title, image, totalWatchCount, slug, date, category} = blog ?? {};
-    const {t} = useTranslation(lang, 'common');
+const BlogCard: React.FC<BlogProps> = ({ blog, className, lang }) => {
+    const { title, image, totalWatchCount, slug, date, category } = blog ?? {};
+    const { t } = useTranslation(lang, 'common');
 
     return (
         <article

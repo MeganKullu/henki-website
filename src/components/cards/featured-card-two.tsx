@@ -1,6 +1,6 @@
 import Heading from '@components/ui/heading';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Text from '@components/ui/text';
 
 interface ItemProps {
@@ -25,7 +25,7 @@ const FeaturedCard: React.FC<Props> = ({ lang, item, className }) => {
         className
       )}
     >
-        <div className="flex flex-shrink-0 items-center justify-center">
+      <div className="flex flex-shrink-0 items-center justify-center">
         {icon}
       </div>
       <div className="ps-4">
@@ -34,7 +34,7 @@ const FeaturedCard: React.FC<Props> = ({ lang, item, className }) => {
         </Heading>
         <Text>{t(description)}</Text>
       </div>
-      
+
     </div>
   );
 };

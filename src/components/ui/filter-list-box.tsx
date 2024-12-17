@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { IoChevronDown, IoCheckmarkSharp } from 'react-icons/io5';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useTranslation } from 'src/app/i18n/client';
+
 import useQueryParam from '@utils/use-query-params';
 type Option = {
   name: string;
@@ -75,10 +75,9 @@ export default function ListBox({
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
-                    `${
-                      active
-                        ? 'text-brand-dark bg-fill-dropdown-hover'
-                        : 'bg-brand-light'
+                    `${active
+                      ? 'text-brand-dark bg-fill-dropdown-hover'
+                      : 'bg-brand-light'
                     }
                     cursor-pointer transition-all select-none relative py-2.5 ltr:pl-10 rtl:pr-10 ltr:pr-4 rtl:pl-4`
                   }
@@ -87,9 +86,8 @@ export default function ListBox({
                   {({ selected, active }) => (
                     <>
                       <span
-                        className={`${
-                          selected ? 'font-medium' : 'font-normal'
-                        } block truncate`}
+                        className={`${selected ? 'font-medium' : 'font-normal'
+                          } block truncate`}
                       >
                         {t(option.name)}
                       </span>

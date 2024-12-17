@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React, { InputHTMLAttributes } from 'react';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   lang: string;
@@ -60,9 +60,8 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         {label && (
           <label
             htmlFor={name}
-            className={`block font-normal text-sm leading-none mb-3 cursor-pointer ${
-              labelClassName || 'text-brand-dark text-opacity-70'
-            }`}
+            className={`block font-normal text-sm leading-none mb-3 cursor-pointer ${labelClassName || 'text-brand-dark text-opacity-70'
+              }`}
           >
             {t(label)}
           </label>

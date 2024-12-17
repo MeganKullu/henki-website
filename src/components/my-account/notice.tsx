@@ -3,7 +3,7 @@
 import { legalSetting } from '@settings/legal-setting';
 import Heading from '@components/ui/heading';
 import { Element } from 'react-scroll';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 function makeTitleToDOMId(title: string) {
   return title.toLowerCase().split(' ').join('_');

@@ -1,17 +1,17 @@
-import { useTranslation } from 'src/app/i18n/client';
+
 import Link from '@components/ui/link';
 import Image from '@components/ui/image';
 
 const ListMenu = ({ dept, data, hasSubMenu, menuIndex, lang }: any) => {
-  const { t } = useTranslation(lang, 'menu');
+  // const { t } = useTranslation(lang, 'menu');
 
   return (
     <li className="relative">
       {data?.image && (
-        <Link href={`/${lang}${data.path}`}>
+        <Link href={`/${data.path}`}>
           <Image
             src={data?.image?.thumbnail ?? '/assets/placeholder/collection.svg'}
-            alt={data.label || t('text-category-thumbnail')}
+            alt={data.label || ('text-category-thumbnail')}
             width={255}
             height={160}
             loading={'lazy'}
@@ -23,11 +23,10 @@ const ListMenu = ({ dept, data, hasSubMenu, menuIndex, lang }: any) => {
 
       <Link
         href={`/${lang}${data.path}`}
-        className={`flex items-center justify-between py-2 hover:text-skin-primary ${
-          data.subMenu ? 'text-base font-medium' : ' '
-        }`}
+        className={`flex items-center justify-between py-2 hover:text-skin-primary ${data.subMenu ? 'text-base font-medium' : ' '
+          }`}
       >
-        {t(data.label)}
+        {(data.label)}
       </Link>
       {hasSubMenu && (
         <SubMenu

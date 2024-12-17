@@ -3,11 +3,11 @@
 import cn from 'classnames';
 import Link from '@components/ui/link';
 import useWindowSize from '@utils/use-window-size';
-import { useTranslation } from 'src/app/i18n/client';
+
 import HeroSearchBox from '@components/hero/hero-banner-search';
 
 interface BannerProps {
-  lang: string;
+  // lang: string;
   banner?: any;
   className?: string;
   heroContentCard?: boolean;
@@ -19,13 +19,11 @@ function getImage(deviceWidth: number, imgObj: any) {
 }
 
 export default function HeroBannerCard({
-  lang,
   banner,
   className = 'py-20 xy:pt-24',
   variant = 'default',
   heroContentCard = true,
 }: BannerProps) {
-  const { t } = useTranslation(lang, 'common');
   const { width } = useWindowSize();
   const { title, description, image } = banner;
   const selectedImage = getImage(width!, image);
@@ -69,7 +67,7 @@ export default function HeroBannerCard({
                 variant === 'medium',
             })}
           >
-            {t(title)}
+            {(title)}
           </h2>
           <p
             className={cn(
@@ -82,22 +80,22 @@ export default function HeroBannerCard({
               }
             )}
           >
-            {t(description)}
+            {(description)}
           </p>
 
           {banner.btnText && (
             <Link
-              href={`/${lang}${banner.btnUrl}`}
+              href={`/${banner.btnUrl}`}
               className="text-brand-light h-[45px] mt-5 md:mt-12 text-base inline-flex items-center justify-center transition duration-300 rounded px-10 py-2 font-semibold border-2  hover:border-brand hover:bg-brand"
             >
-              {t(banner.btnText)}
+              {(banner.btnText)}
             </Link>
           )}
         </div>
       </div>
     </div>
   ) : (
-    <Link href={`/${lang}${banner.btnUrl}`}>
+    <Link href={`/${banner.btnUrl}`}>
       <div
         className={cn(
           'w-full bg-skin-thumbnail bg-no-repeat bg-cover flex items-center',

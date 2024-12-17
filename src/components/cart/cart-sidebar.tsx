@@ -9,7 +9,7 @@ import EmptyCart from './empty-cart';
 import Link from '@components/ui/link';
 import { ROUTES } from '@utils/routes';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import DeleteIcon from '@components/icons/delete-icon';

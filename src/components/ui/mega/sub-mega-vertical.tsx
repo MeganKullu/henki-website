@@ -1,4 +1,4 @@
-import { useTranslation } from 'src/app/i18n/client';
+
 import { useRouter } from 'next/router';
 import ListMenu from '@components/ui/mega/mega-menu';
 import Container from '@components/ui/container';
@@ -10,7 +10,7 @@ import { ROUTES } from '@utils/routes';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
-  const { t } = useTranslation(lang, 'common');
+  // const { t } = useTranslation(lang, 'common');
   const { name, children: items, icon, type } = item;
 
   return (
@@ -20,17 +20,15 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
       >
         <Link
           href={`/${lang}${ROUTES.SEARCH}`}
-          className={`flex items-center w-full hover:text-skin-primary ${
-            items ? 'text-base font-medium' : ' '
-          }`}
+          className={`flex items-center w-full hover:text-skin-primary ${items ? 'text-base font-medium' : ' '
+            }`}
         >
           <span className="capitalize ">{name}</span>
         </Link>
         {Array.isArray(items) && (
           <div
-            className={`subMenuChild w-full py-1 subMega--level${depth} ${
-              depth > 1 && ' hidden '
-            }`}
+            className={`subMenuChild w-full py-1 subMega--level${depth} ${depth > 1 && ' hidden '
+              }`}
           >
             <ul key="content" className="text-xs">
               {items?.map((currentItem) => {
@@ -56,7 +54,7 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
 }
 
 const SubMegaVertical = ({ items, lang }: any) => {
-  const { t } = useTranslation('menu');
+  // const { t } = useTranslation('menu');
   const depth = 0;
   return (
     <div className="dropdownMenu hidden md:block absolute z-10 left-full top-0 w-[800px] bg-skin-fill opacity-0 invisible shadow-md">

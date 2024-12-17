@@ -9,7 +9,7 @@ import {
 import CloseButton from '@components/ui/close-button';
 import Heading from '@components/ui/heading';
 import Map from '@components/ui/map';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ContactFormValues {
   title: string;

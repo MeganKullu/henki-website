@@ -1,13 +1,13 @@
 "use client";
-import {usePopularProductsQuery} from '@framework/product/get-all-popular-products';
+import { usePopularProductsQuery } from '@framework/product/get-all-popular-products';
 import SectionHeader from '@components/common/section-header';
 import ProductCardLoader from '@components/ui/loaders/product-card-loader';
-import {LIMITS} from '@framework/utils/limits';
+import { LIMITS } from '@framework/utils/limits';
 import Alert from '@components/ui/alert';
 import ProductFlashSellCard from '@components/product/product-cards/product-flash-sell-card';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Carousel from "@components/ui/carousel/carousel";
-import {SwiperSlide} from "@components/ui/carousel/slider";
+import { SwiperSlide } from "@components/ui/carousel/slider";
 import React from "react";
 
 
@@ -32,20 +32,20 @@ const breakpoints = {
     },
 };
 
-const ProductWithBestDeals: React.FC<ProductFeedProps> = ({lang,
-                                                              className = '',
-                                                              uniqueKey,
-                                                          }) => {
+const ProductWithBestDeals: React.FC<ProductFeedProps> = ({ lang,
+    className = '',
+    uniqueKey,
+}) => {
     const limit = LIMITS.POPULAR_PRODUCTS_TWO_LIMITS;
-    const {data, isLoading, error} = usePopularProductsQuery({
+    const { data, isLoading, error } = usePopularProductsQuery({
         limit: limit,
     });
 
     return (
         <div className={`mb-8 ${className}`}>
-            <SectionHeader lang={lang} sectionHeading="text-deals-of-the-week" className="mb-6 block-title"/>
+            <SectionHeader lang={lang} sectionHeading="text-deals-of-the-week" className="mb-6 block-title" />
             {error ? (
-                <Alert message={error?.message} className="col-span-full"/>
+                <Alert message={error?.message} className="col-span-full" />
             ) : (
                 <div className="heightFull relative">
                     <Carousel
@@ -57,8 +57,8 @@ const ProductWithBestDeals: React.FC<ProductFeedProps> = ({lang,
 
                     >
                         {isLoading && !data?.length ? (
-                            Array.from({length: limit!}).map((_, idx) => (
-                                <ProductCardLoader uniqueKey={`${uniqueKey}-${idx}`}  key={`popular-product-${idx}`} />
+                            Array.from({ length: limit! }).map((_, idx) => (
+                                <ProductCardLoader uniqueKey={`${uniqueKey}-${idx}`} key={`popular-product-${idx}`} />
                             ))
                         ) : (
                             <>
@@ -70,7 +70,7 @@ const ProductWithBestDeals: React.FC<ProductFeedProps> = ({lang,
                                         <ProductFlashSellCard
                                             lang={lang}
                                             key={`popular-product-${product.id}`} product={product}
-                                            date={Date.now() + 4000000 * 60}/>
+                                            date={Date.now() + 4000000 * 60} />
                                     </SwiperSlide>
                                 ))}
 

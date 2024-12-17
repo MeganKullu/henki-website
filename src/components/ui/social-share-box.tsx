@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import Input from '@components/ui/form/input';

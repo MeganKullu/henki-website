@@ -8,7 +8,7 @@ import MobileNavigation from '@layouts/mobile-navigation/mobile-navigation';
 import { useIsMounted } from '@utils/use-is-mounted';
 import Footer from '@layouts/footer/footer';
 import Header from '@layouts/default/header';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 function ClientRenderedHighLightedBar({ lang }: { lang: string }) {
   const { t } = useTranslation(lang, 'common');

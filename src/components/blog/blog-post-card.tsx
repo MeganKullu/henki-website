@@ -5,7 +5,7 @@ import Image from '@components/ui/image';
 import Link from '@components/ui/link';
 import { Blog } from '@framework/types';
 
-import { useTranslation } from 'src/app/i18n/client';
+
 import { productPlaceholder } from '@assets/placeholders';
 import { ROUTES } from '@utils/routes';
 import { getCountview } from '@utils/get-countview';
@@ -35,7 +35,7 @@ const BlogPostCard: React.FC<BlogProps> = ({ blogData, className, lang }) => {
     contentThree,
     quote,
   } = blogData ?? {};
-   const { t } = useTranslation(lang, 'common');
+  const { t } = useTranslation(lang, 'common');
   const blogUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${ROUTES.BLOG}/${slug}`;
 
   return (

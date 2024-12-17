@@ -6,7 +6,7 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useUI } from '@contexts/ui.context';
 import { useEffect, useState } from 'react';
 import Image from '@components/ui/image';
-import { useTranslation } from 'src/app/i18n/client';
+
 import useQueryParam from '@utils/use-query-params';
 
 function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
@@ -65,15 +65,13 @@ function SidebarMenuItem({ className, item, depth = 0, lang }: any) {
     <>
       <li
         onClick={onClick}
-        className={`flex justify-between items-center transition ${
-          className
+        className={`flex justify-between items-center transition ${className
             ? className
             : 'text-sm md:text-15px  border-t border-border-base first:border-t-0  py-3 xl:py-3.5 2xl:py-2.5 3xl:py-3'
-        } ${
-          isOpen
+          } ${isOpen
             ? 'text-skin-primary'
             : 'text-skin-base hover:text-skin-primary'
-        }`}
+          }`}
       >
         <button
           className={cn(

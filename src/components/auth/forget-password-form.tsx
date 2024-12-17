@@ -2,7 +2,7 @@ import Button from '@components/ui/button';
 import Input from '@components/ui/form/input';
 import Logo from '@components/ui/logo';
 import { useForm } from 'react-hook-form';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { useModalAction } from '@components/common/modal/modal.context';
 import CloseButton from '@components/ui/close-button';
 

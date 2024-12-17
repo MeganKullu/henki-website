@@ -4,18 +4,16 @@ import {BsChevronDown} from 'react-icons/bs';
 import ListMenu from '@components/ui/list-menu';
 import SubMega from '@components/ui/mega/sub-mega';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
 import { useState } from 'react';
 
 interface MenuProps {
-  lang: string;
   data: any;
   className?: string;
   bgPrimary?: boolean;
 }
 
-const HeaderMenu: React.FC<MenuProps> = ({ lang, data, className, bgPrimary }) => {
-  const { t } = useTranslation(lang, 'menu');
+const HeaderMenu: React.FC<MenuProps> = ({ data, className, bgPrimary }) => {
+  // const { t } = useTranslation(lang, 'menu');
   const [hoverMenu, setHoverMenu] = useState(Boolean(false));
   return (
     <nav className={cn('headerMenu flex w-full', className)}>
@@ -29,12 +27,12 @@ const HeaderMenu: React.FC<MenuProps> = ({ lang, data, className, bgPrimary }) =
           onMouseLeave={() => setHoverMenu(false)}
         >
           <Link
-            href={`/${lang}${item.path}`}
+            href={`/${item.path}`}
             className={`uppercase inline-flex items-center text-sm text-white py-2 font-medium relative  ${
               !bgPrimary && 'group-hover:text-brand'
             }`}
           >
-            {t(item.label)}
+            {(item.label)}
             {(item?.columns || item.subMenu) && (
               <span
                 className={`text-xs w-4 flex justify-end text-white opacity-80 ${
@@ -62,14 +60,14 @@ const HeaderMenu: React.FC<MenuProps> = ({ lang, data, className, bgPrimary }) =
                           menuName={menuName}
                           key={menuName}
                           menuIndex={index}
-                          lang={lang}
+                          // lang={lang}
                         />
                       );
                     })}
                   </ul>
                 </div>
               ) : (
-                <SubMega item={item} lang={lang} />
+                <SubMega item={item}  />
               )}
             </>
           )}

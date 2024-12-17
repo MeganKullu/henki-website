@@ -10,7 +10,7 @@ import {
 import Switch from '@components/ui/switch';
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const defaultValues = {};
 const AccountDetails: React.FC<{ lang: string }> = ({ lang }) => {

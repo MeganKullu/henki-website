@@ -9,7 +9,7 @@ import { useCart } from '@contexts/cart/cart.context';
 
 import { productPlaceholder } from '@assets/placeholders';
 import dynamic from 'next/dynamic';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { ROUTES } from '@utils/routes';
 import Link from '@components/ui/link';
 import SearchIcon from '@components/icons/search-icon';
@@ -37,7 +37,7 @@ function RenderPopupOrAddToCart({ props }: { props: Object }) {
   }
   if (Number(quantity) < 1 || outOfStock) {
     return (
-        <span className="text-[11px] md:text-xs font-bold text-brand-light uppercase inline-block bg-brand-danger rounded-full px-2.5 pt-1 pb-[3px] mx-0.5 sm:mx-1">
+      <span className="text-[11px] md:text-xs font-bold text-brand-light uppercase inline-block bg-brand-danger rounded-full px-2.5 pt-1 pb-[3px] mx-0.5 sm:mx-1">
         {t('text-out-stock')}
       </span>
     );

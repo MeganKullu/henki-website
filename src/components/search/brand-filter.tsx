@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import React, { useState, useEffect } from 'react';
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 import useQueryParam from '@utils/use-query-params';
 
 export const BrandFilter = ({ lang }: { lang: string }) => {

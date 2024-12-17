@@ -3,8 +3,8 @@
 import cn from 'classnames';
 import { Disclosure, Transition } from '@headlessui/react';
 import { RiArrowRightSLine } from 'react-icons/ri';
-import { FaPlus,FaMinus } from 'react-icons/fa';
-import { useTranslation } from 'src/app/i18n/client';
+import { FaPlus, FaMinus } from 'react-icons/fa';
+
 
 type CollapseProps = {
   lang: string;
@@ -40,7 +40,7 @@ export const Accordion: React.FC<CollapseProps> = ({
                   {t(title)}
                 </span>
                 {open ? <FaMinus /> : <FaPlus />}
-              
+
               </Disclosure.Button>
 
               <Transition

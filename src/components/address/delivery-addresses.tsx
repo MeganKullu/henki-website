@@ -3,7 +3,7 @@ import AddressGrid from '@components/address/address-grid';
 import { useModalAction } from '@components/common/modal/modal.context';
 import CloseButton from '@components/ui/close-button';
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const DeliveryAddresses: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');

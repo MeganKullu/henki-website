@@ -8,7 +8,7 @@ import {useBlogsQuery} from "@framework/blog/get-all-blogs";
 import useWindowSize from "@utils/use-window-size";
 
 interface Props {
-    lang: string;
+    // lang: string;
     className?: string;
     headingPosition?: 'left' | 'center';
 }
@@ -35,7 +35,7 @@ const breakpoints = {
 };
 
 const LatestblogCarousel: React.FC<Props> = ({
-             lang,
+            //  lang,
              className = 'mb-12 lg:mb-14 xl:mb-16 2xl:mb-20 pb-1 lg:pb-0 3xl:pb-2.5',
              headingPosition = 'left',
     }) => {
@@ -51,7 +51,7 @@ const LatestblogCarousel: React.FC<Props> = ({
 
             <SectionHeader sectionHeading="text-latestblog" className="mb-3"/>
             <Carousel
-                lang={lang}
+                // lang={lang}
                 breakpoints={breakpoints}
                 autoplay={false}
                 navigation={true}
@@ -65,10 +65,10 @@ const LatestblogCarousel: React.FC<Props> = ({
                         className="px-1.5 md:px-2 xl:px-3 py-5"
                     >
                         <LatestblogCard
-                            lang={lang}
+                            // lang={lang}
                             key={item.id}
                             collection={item}
-                            href={`/${lang}${ROUTES.BLOG}/${item.slug}`}
+                            href={`/${ROUTES.BLOG}/${item.slug}`}
                         />
                     </SwiperSlide>
                 ))}

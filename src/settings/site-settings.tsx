@@ -20,7 +20,7 @@ export const siteSettings = {
     url: siteLogo,
     urlReverse: siteLogoBlack,
     alt: 'Razor',
-    href: '/en',
+    href: '/',
     width: 195,
     height: 26,
   },
@@ -67,8 +67,8 @@ export const siteSettings = {
           },
           {
             id: 6,
-            path: '/home4',
-            label: 'menu-home4',
+            path: '/home7',
+            label: 'menu-home7',
           },
           {
             id: 7,

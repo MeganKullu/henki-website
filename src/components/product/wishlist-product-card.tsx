@@ -6,7 +6,7 @@ import Image from '@components/ui/image';
 import usePrice from '@framework/product/use-price';
 import { Product } from '@framework/types';
 import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ProductProps {
   product: Product;

@@ -4,7 +4,7 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useUI } from '@contexts/ui.context';
 import { useEffect, useState } from 'react';
 import Image from '@components/ui/image';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { FaCheck } from 'react-icons/fa';
 import useQueryParam from '@utils/use-query-params';
 
@@ -94,7 +94,7 @@ function CategoryFilterMenuItem({
             'hover:text-brand  flex items-center w-full ltr:text-left rtl:text-right cursor-pointer group gap-2',
             { 'py-2': depth > 0 }
           )}
-          // onClick={handleChange}
+        // onClick={handleChange}
         >
           {icon && (
             <div className="inline-flex shrink-0 2xl:w-12 2xl:h-12 3xl:w-auto 3xl:h-auto ltr:mr-2.5 rtl:ml-2.5 md:ltr:mr-4 md:rtl:ml-4 2xl:ltr:mr-3 2xl:rtl:ml-3 3xl:ltr:mr-4 3xl:rtl:ml-4">
@@ -108,12 +108,11 @@ function CategoryFilterMenuItem({
             </div>
           )}
           {depth > 0 && (
-              <span
-                  className={`w-[20px] h-[20px] text-[11px] flex items-center justify-center border-2 border-border-four rounded-full transition duration-500 ease-in-out group-hover:border-yellow-100 text-brand-light ${
-                      formState.includes(item.slug) &&
-                      'border-yellow-100 bg-yellow-100'
-                  }`}
-              >
+            <span
+              className={`w-[20px] h-[20px] text-[11px] flex items-center justify-center border-2 border-border-four rounded-full transition duration-500 ease-in-out group-hover:border-yellow-100 text-brand-light ${formState.includes(item.slug) &&
+                'border-yellow-100 bg-yellow-100'
+                }`}
+            >
               {formState.includes(item.slug) && <FaCheck />}
             </span>
           )}

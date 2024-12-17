@@ -17,7 +17,7 @@ import { getDirection } from '@utils/get-direction';
 import cn from 'classnames';
 
 type CarouselPropsType = {
-  lang: string;
+
   className?: string;
   buttonGroupClassName?: string;
   prevActivateId?: string;
@@ -36,7 +36,7 @@ type CarouselPropsType = {
 };
 
 export default function Carousel({
-  lang,
+
   children,
   className = '',
   buttonGroupClassName = '',
@@ -53,7 +53,7 @@ export default function Carousel({
   autoplay,
   ...props
 }: React.PropsWithChildren<CarouselPropsType>) {
-  const dir = getDirection(lang);
+
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
   let nextButtonClasses = cn(
@@ -76,7 +76,6 @@ export default function Carousel({
         modules={[Navigation, Autoplay, Pagination, Grid]}
         autoplay={autoplay}
         breakpoints={breakpoints}
-        dir={dir}
         pagination={pagination}
         grid={grid}
         navigation={
@@ -103,21 +102,21 @@ export default function Carousel({
         >
           {prevActivateId.length > 0 ? (
             <div className={prevButtonClasses} id={prevActivateId}>
-              {dir === 'rtl' ? <IoIosArrowForward /> : <IoIosArrowBack />}
+              {'rtl' ? <IoIosArrowForward /> : <IoIosArrowBack />}
             </div>
           ) : (
             <div ref={prevRef} className={prevButtonClasses}>
-              {dir === 'rtl' ? <IoIosArrowForward /> : <IoIosArrowBack />}
+              {'rtl' ? <IoIosArrowForward /> : <IoIosArrowBack />}
             </div>
           )}
 
           {nextActivateId.length > 0 ? (
             <div className={nextButtonClasses} id={nextActivateId}>
-              {dir === 'rtl' ? <IoIosArrowBack /> : <IoIosArrowForward />}
+              { 'rtl' ? <IoIosArrowBack /> : <IoIosArrowForward />}
             </div>
           ) : (
             <div ref={nextRef} className={nextButtonClasses}>
-              {dir === 'rtl' ? <IoIosArrowBack /> : <IoIosArrowForward />}
+              {'rtl' ? <IoIosArrowBack /> : <IoIosArrowForward />}
             </div>
           )}
         </div>

@@ -5,7 +5,7 @@ import { useCheckoutMutation } from '@framework/checkout/use-checkout';
 import { CheckBox } from '@components/ui/form/checkbox';
 import Button from '@components/ui/button';
 import { ROUTES } from '@utils/routes';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { useRouter } from 'next/navigation';
 
 interface CheckoutInputType {

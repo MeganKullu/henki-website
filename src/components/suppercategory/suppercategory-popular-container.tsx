@@ -8,9 +8,9 @@ interface Props {
     error?: any;
     rowCarousel?: number;
     showBanner?: boolean;
-    lang: string;
+    // lang: string;
 }
-const SupperCategoryContainer: React.FC<Props> = ({lang,data, isLoading, error,rowCarousel=1, showBanner}) => {
+const SupperCategoryContainer: React.FC<Props> = ({data, isLoading, error,rowCarousel=1, showBanner}) => {
     let breakpoints:object = {};
     if(showBanner){
          breakpoints = {
@@ -59,7 +59,7 @@ const SupperCategoryContainer: React.FC<Props> = ({lang,data, isLoading, error,r
 
     return (
       <ProductsCarousel
-        lang={lang}
+        // lang={lang}
         sectionHeading=""
         categorySlug={ROUTES.PRODUCTS}
         products={data}

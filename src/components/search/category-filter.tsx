@@ -4,7 +4,7 @@ import Alert from '@components/ui/alert';
 import Scrollbar from '@components/ui/scrollbar';
 import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
 import { useCategoriesQuery } from '@framework/category/get-all-categories';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export const CategoryFilter = ({ lang }: { lang: string }) => {
   const { t } = useTranslation(lang, 'common');

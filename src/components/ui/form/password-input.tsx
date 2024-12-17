@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React, { InputHTMLAttributes, useState } from 'react';
 import { Eye } from '@components/icons/eye-icon';
 import { EyeOff } from '@components/icons/eye-off-icon';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;

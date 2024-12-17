@@ -4,7 +4,7 @@ import ProductFlashSaleCoral from '@components/product/product-cards/product-fla
 import { homeRefinedBanner as banner } from '@framework/static/banner';
 import { useFlashSellProductsQuery } from '@framework/product/get-all-flash-sell-products';
 import { LIMITS } from '@framework/utils/limits';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface Props {
   lang: string;

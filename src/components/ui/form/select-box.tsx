@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { HiOutlineSelector, HiCheck } from 'react-icons/hi';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useTranslation } from 'src/app/i18n/client';
+
 type Option = {
   name: string;
   value: string;
@@ -67,9 +67,8 @@ export default function ListBox({
                   {({ selected, active }) => (
                     <>
                       <span
-                        className={`${
-                          selected ? 'font-medium' : 'font-normal'
-                        } block truncate`}
+                        className={`${selected ? 'font-medium' : 'font-normal'
+                          } block truncate`}
                       >
                         {t(option.name)}
                       </span>

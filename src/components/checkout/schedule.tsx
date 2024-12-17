@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const deliveryDateSchedule = [
   'Sat, Jul 03, 2021',
@@ -48,17 +48,15 @@ export default function Schedule({ lang }: { lang: string }) {
                   <div className="text-center">
                     <RadioGroup.Label
                       as="p"
-                      className={`text-base font-semibold  ${
-                        checked ? 'text-brand-light' : 'text-gray-900'
-                      }`}
+                      className={`text-base font-semibold  ${checked ? 'text-brand-light' : 'text-gray-900'
+                        }`}
                     >
                       {getDay(date)}
                     </RadioGroup.Label>
                     <RadioGroup.Description
                       as="span"
-                      className={`text-15px ${
-                        checked ? 'text-brand-light' : 'text-gray-500'
-                      }`}
+                      className={`text-15px ${checked ? 'text-brand-light' : 'text-gray-500'
+                        }`}
                     >
                       {getMonth(date)}
                     </RadioGroup.Description>

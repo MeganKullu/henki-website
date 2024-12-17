@@ -9,7 +9,7 @@ import DeliveryNotes from './delivery-instruction';
 import DeliverySchedule from './schedule';
 import DeliveryTips from './delivery-tips';
 import StripeCheckoutInlineForm from './stripe-checkout-inline-form';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { useIsMounted } from '@utils/use-is-mounted';
 
 const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
@@ -26,7 +26,7 @@ const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
       title: 'text-delivery-schedule',
       component: <DeliverySchedule lang={lang} />,
     },
-   
+
     {
       id: 4,
       title: 'text-payment-option',
@@ -37,7 +37,7 @@ const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
       title: 'text-delivery-instructions',
       component: <DeliveryNotes lang={lang} />,
     },
-   
+
   ];
   const changeItem = (itemIndex: any) => {
     if (itemIndex !== bindIndex) {
@@ -52,11 +52,10 @@ const CheckoutDetails: React.FC<{ lang: string }> = ({ lang }) => {
           return (
             <div
               key={index}
-              className={`accordion__panel ${
-                !(data?.length - 1 === index)
+              className={`accordion__panel ${!(data?.length - 1 === index)
                   ? 'border-b border-border-base'
                   : ''
-              } ${bindIndex !== index ? 'collapsed' : 'expanded'}
+                } ${bindIndex !== index ? 'collapsed' : 'expanded'}
             `}
               onClick={() => changeItem(index)}
             >

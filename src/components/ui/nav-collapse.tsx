@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { Disclosure, Transition } from '@headlessui/react';
 import { FaChevronDown } from 'react-icons/fa';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 type CollapseProps = {
   lang: string;
@@ -33,9 +33,8 @@ export const NavCollapse: React.FC<CollapseProps> = ({
                   <span className="ltr:pl-3 rtl:pr-3">{t(title.name)}</span>
                 </h2>
                 <FaChevronDown
-                  className={`${
-                    open ? 'transform rotate-180' : ''
-                  } w-4 h-4 2xl:w-5 2xl:h-5 text-brand-dark opacity-70`}
+                  className={`${open ? 'transform rotate-180' : ''
+                    } w-4 h-4 2xl:w-5 2xl:h-5 text-brand-dark opacity-70`}
                 />
               </Disclosure.Button>
 

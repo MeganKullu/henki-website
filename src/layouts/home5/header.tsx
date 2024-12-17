@@ -6,18 +6,14 @@ import {useUI} from '@contexts/ui.context';
 import {useActiveScroll} from '@utils/use-active-scroll';
 import Container from '@components/ui/container';
 import Logo from '@components/ui/logo';
-import UserIcon from '@components/icons/user-icon';
-import MenuIcon from '@components/icons/menu-icon';
 import SearchIcon from '@components/icons/search-icon';
 import HeaderMenu from '@layouts/header/header-menu';
 import HeaderMenutop from '@layouts/header/header-menutop';
-import LanguageSwitcher from '@components/ui/language-switcher';
 import {useModalAction} from '@components/common/modal/modal.context';
-import cn from 'classnames';
+import cn  from 'classnames';
 import Search from '@components/common/search';
 import {FiMenu} from 'react-icons/fi';
 import CategoryDropdownMenu from '@components/category/category-dropdown-menu';
-import {useTranslation} from 'src/app/i18n/client';
 import {AiOutlineUser} from 'react-icons/ai';
 
 const AuthMenu = dynamic(() => import('@layouts/header/auth-menu'), {
@@ -30,18 +26,17 @@ const CartButton = dynamic(() => import('@components/cart/cart-button'), {
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 const {site_header} = siteSettings;
 
-function Header({lang}: { lang: string }) {
+function Header() {
     const {openSidebar, displaySearch, openSearch, isAuthorized, displayMobileSearch} = useUI();
-    const {openModal} = useModalAction();
+    // const {openModal} = useModalAction();
     const siteSearchRef = useRef() as DivElementRef;
-    const {t} = useTranslation(lang, 'common');
     const siteHeaderRef = useRef() as DivElementRef;
     const [categoryMenu, setCategoryMenu] = useState(Boolean(true));
     useActiveScroll(siteHeaderRef);
     
-    function handleLogin() {
-        openModal('LOGIN_VIEW');
-    }
+    // function handleLogin() {
+    //     openModal('LOGIN_VIEW');
+    // }
     
     function handleMobileMenu() {
         return openSidebar();
@@ -63,24 +58,21 @@ function Header({lang}: { lang: string }) {
         >
           <div className="innerSticky z-20 w-full transition duration-200 ease-in-out  body-font bg-brand-light">
             <Search
-              lang={lang}
+              // lang={lang}
               searchId="mobile-search"
               className="top-bar-search hidden lg:max-w-[600px] absolute z-30 px-4 md:px-6 top-12 xl:top-1"
             />
             <div className="top-bar  text-13px border-b border-black/10">
               <Container className={'sm:max-w-[1730px]'}>
                 <div className="h-12 flex justify-between items-center py-2 gap-5">
-                  <text className={`hidden md:block truncate`}>
-                    {t('text-free-shipping')}
-                  </text>
+                  <p className={`hidden md:block truncate`}>
+                    text-free-shipping
+                  </p>
                   <div className="flex flex-shrink-0 smx-auto max-w-[1920px]pace-s-5">
                     <HeaderMenutop
                       data={site_header.topmenu}
                       className="flex transition-all duration-200 ease-in-out"
-                      lang={lang}
-                    />
-                    <LanguageSwitcher
-                      lang={lang}
+                      // lang={lang}
                     />
                   </div>
                 </div>
@@ -99,7 +91,6 @@ function Header({lang}: { lang: string }) {
                     </button>
                   </div>
                   <Logo
-                    lang={lang}
                     className="ps-3 md:ps-0 lg:mx-0"
                     variant={'black'}
                   />
@@ -108,14 +99,14 @@ function Header({lang}: { lang: string }) {
                   <div className={`text-[14px] gap-2 lg:flex hidden`}>
                     <div className="image_hotline bg-iconPhone2"></div>
                     <div className={``}>
-                      <div className="text-gray-400 ">{t('text-hotline')}</div>
-                      <a className="text-sm  font-medium">{t('link-phone')}</a>
+                      <div className="text-gray-400 ">text-hotline</div>
+                      <a className="text-sm  font-medium">link-phone</a>
                     </div>
                   </div>
                   {/* End of Phone */}
                   <Search
                     searchId="top-bar-search"
-                    lang={lang}
+                    // lang={lang}
                     className="hidden lg:flex lg:max-w-[450px] xl:max-w-[800px] 2xl:max-w-800px] lg:mx-10"
                     variant="fill"
                   />
@@ -126,20 +117,19 @@ function Header({lang}: { lang: string }) {
                       <AuthMenu
                         isAuthorized={isAuthorized}
                         className={'sm:text-skin-base '}
-                        href={`/${lang}${ROUTES.ACCOUNT}`}
+                        href={`/${ROUTES.ACCOUNT}`}
                         btnProps={{
                           children: (
                             <AiOutlineUser className="text-xl lg:text-3xl" />
                           ),
-                          onClick: handleLogin,
+                          // onClick: handleLogin,
                         }}
                       >
-                        {t('text-account')}
+                        text-account
                       </AuthMenu>
                     </div>
                     <CartButton
                       className="hidden lg:flex"
-                      lang={lang}
                       iconClassName={'text-skin-base'}
                     />
                   </div>
@@ -152,7 +142,7 @@ function Header({lang}: { lang: string }) {
               <Container className={'sm:max-w-[1730px]'}>
                 <div className="flex justify-between items-center">
                   <Logo
-                    lang={lang}
+                    // lang={lang}
                     className="navbar-logo w-0 opacity-0 transition-all duration-200 ease-in-out"
                   />
                   {/* End of logo */}
@@ -162,16 +152,16 @@ function Header({lang}: { lang: string }) {
                       onClick={handleCategoryMenu}
                     >
                       <FiMenu className="text-2xl me-3" />
-                      {t('text-all-categories')}
+                    text-all-categories
                     </button>
                     {categoryMenu && (
-                      <CategoryDropdownMenu categoriesLimit={9} lang={lang} />
+                      <CategoryDropdownMenu categoriesLimit={9} />
                     )}
                   </div>
                   <HeaderMenu
                     data={site_header.menu}
                     className="flex transition-all duration-200 ease-in-out"
-                    lang={lang}
+                    // lang={lang}
                     bgPrimary={true}
                   />
                   {/* End of main menu */}
@@ -180,7 +170,7 @@ function Header({lang}: { lang: string }) {
                       <Search
                         ref={siteSearchRef}
                         className="max-w-[780px] xl:max-w-[830px] 2xl:max-w-[1000px]"
-                        lang={lang}
+                        // lang={lang}
                       />
                     </div>
                   )}
@@ -202,15 +192,15 @@ function Header({lang}: { lang: string }) {
                         <AuthMenu
                           isAuthorized={isAuthorized}
                           className={'sm:text-brand-light '}
-                          href={`/${lang}${ROUTES.ACCOUNT}`}
+                          href={`/${ROUTES.ACCOUNT}`}
                           btnProps={{
                             children: (
                               <AiOutlineUser className="text-xl lg:text-3xl" />
                             ),
-                            onClick: handleLogin,
+                            // onClick: handleLogin,
                           }}
                         >
-                          {t('text-account')}
+                          text-account
                         </AuthMenu>
                       </div>
                       {/* End of auth */}
@@ -218,7 +208,7 @@ function Header({lang}: { lang: string }) {
                       <CartButton
                         className="ms-8 "
                         iconClassName={'text-white'}
-                        lang={lang}
+                       
                       />
                       {/* End of cart btn */}
                     </div>

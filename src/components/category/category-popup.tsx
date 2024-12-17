@@ -1,6 +1,6 @@
 import CategoryDropdownSidebar from '@components/category/category-dropdown-sidebar';
 import { useModalAction } from '@components/common/modal/modal.context';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const CategoryPopup: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');

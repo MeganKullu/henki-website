@@ -1,7 +1,7 @@
 import Image from '@components/ui/image';
 import Link from '@components/ui/link';
 import { LinkProps } from 'next/link';
-import { useTranslation } from 'src/app/i18n/client';
+
 import cn from 'classnames';
 
 interface Props {

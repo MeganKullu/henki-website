@@ -4,12 +4,12 @@ import usePrice from '@framework/product/use-price';
 import { Product } from '@framework/types';
 import { useModalAction } from '@components/common/modal/modal.context';
 import useWindowSize from '@utils/use-window-size';
-import { Eye } from '@components/icons/eye-icon';
+// import { Eye } from '@components/icons/eye-icon';
 import { useCart } from '@contexts/cart/cart.context';
 
 import { productPlaceholder } from '@assets/placeholders';
 import dynamic from 'next/dynamic';
-import { useTranslation } from 'src/app/i18n/client';
+// 
 import { ROUTES } from '@utils/routes';
 import Link from '@components/ui/link';
 import SearchIcon from '@components/icons/search-icon';
@@ -25,7 +25,7 @@ interface ProductProps {
 function RenderPopupOrAddToCart({ props }: { props: Object }) {
   let { data, lang }: any = props;
   // console.log(variant);
-  const { t } = useTranslation(lang, 'common');
+  // const { t } = useTranslation(lang, 'common');
   const { id, quantity, product_type } = data ?? {};
   const { width } = useWindowSize();
   const { openModal } = useModalAction();
@@ -38,7 +38,7 @@ function RenderPopupOrAddToCart({ props }: { props: Object }) {
   if (Number(quantity) < 1 || outOfStock) {
     return (
       <span className="min-w-[150px] min-h-[38px] px-4 py-2 text-[13px] text-brand-light  inline-block bg-brand-danger rounded-full ">
-        {t('text-out-stock')}
+        text-out-stock
       </span>
     );
   }
@@ -49,7 +49,7 @@ function RenderPopupOrAddToCart({ props }: { props: Object }) {
         aria-label="Count Button"
         onClick={handlePopupView}
       >
-        {t('text-product-details')}
+        text-product-details
       </button>
     );
   }
@@ -58,7 +58,7 @@ function RenderPopupOrAddToCart({ props }: { props: Object }) {
 const ProductCard: React.FC<ProductProps> = ({ product, className, lang }) => {
   const { name, image, unit, slug, product_type } = product ?? {};
   const { openModal } = useModalAction();
-  const { t } = useTranslation(lang, 'common');
+  // const { t } = useTranslation(lang, 'common');
   const { width } = useWindowSize();
   const iconSize = width! > 1024 ? '20' : '17';
   const { price, basePrice, discount } = usePrice({
@@ -103,7 +103,7 @@ const ProductCard: React.FC<ProductProps> = ({ product, className, lang }) => {
         <div className="w-full h-full absolute top-0  z-10">
           {discount && (
             <span className="text-[10px]  text-skin-inverted uppercase inline-block bg-skin-primary rounded-sm px-2.5 pt-1 pb-[3px] mx-0.5 sm:mx-1">
-              {t('text-on-sale')}
+              text-on-sale
             </span>
           )}
           <button

@@ -1,6 +1,6 @@
 import usePrice from '@framework/product/use-price';
 import isEmpty from 'lodash/isEmpty';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export default function VariationPrice({
   selectedVariation,

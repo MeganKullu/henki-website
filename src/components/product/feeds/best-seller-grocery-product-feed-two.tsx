@@ -9,7 +9,7 @@ import cn from 'classnames';
 import { useBestSellerGroceryProductsQuery } from '@framework/product/get-all-best-seller-grocery-products';
 import Link from '@components/ui/link';
 import { ROUTES } from '@utils/routes';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface BestSellerProps {
   className?: string;
@@ -94,20 +94,20 @@ const BestSellerGroceryProductFeedTwo: React.FC<BestSellerProps> = ({
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-2 3xl:grid-cols-3 md:gap-4 2xl:gap-5">
         {!data?.length && isLoading
           ? Array.from({ length: limit! }).map((_, idx) => (
-              <ProductCardLoader
-                key={`popular-product-${idx}`}
-                uniqueKey={`popular-product-${idx}`}
-              />
-            ))
+            <ProductCardLoader
+              key={`popular-product-${idx}`}
+              uniqueKey={`popular-product-${idx}`}
+            />
+          ))
           : data
-              ?.slice(1, 10)
-              ?.map((product: any) => (
-                <ProductCardMaple
-                  product={product}
-                  key={`popular-product-${product.id}`}
-                  lang={lang}
-                />
-              ))}
+            ?.slice(1, 10)
+            ?.map((product: any) => (
+              <ProductCardMaple
+                product={product}
+                key={`popular-product-${product.id}`}
+                lang={lang}
+              />
+            ))}
       </div>
       <div className="flex justify-center mt-6 md:mt-8">
         <Link

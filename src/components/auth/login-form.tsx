@@ -7,7 +7,7 @@ import Button from '@components/ui/button';
 import { useForm } from 'react-hook-form';
 import { useLoginMutation, LoginInputType } from '@framework/auth/use-login';
 import Logo from '@components/ui/logo';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Image from '@components/ui/image';
 import { useModalAction } from '@components/common/modal/modal.context';
 import Switch from '@components/ui/switch';

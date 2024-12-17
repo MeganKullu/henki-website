@@ -1,5 +1,5 @@
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { FilteredItem } from './filtered-item';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import isEmpty from 'lodash/isEmpty';

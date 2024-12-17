@@ -10,7 +10,7 @@ import { CheckoutItem } from '@components/checkout/checkout-card-item';
 import { CheckoutCardFooterItem } from './checkout-card-footer-item';
 import { useRouter } from 'next/navigation';
 import { ROUTES } from '@utils/routes';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { useIsMounted } from '@utils/use-is-mounted';
 import { useEffect, useState } from 'react';
 import SearchResultLoader from '@components/ui/loaders/search-result-loader';
@@ -103,7 +103,7 @@ const CheckoutCard: React.FC<{ lang: string }> = ({ lang }) => {
         </Link>
         . {t('text-credit-debit')}
       </Text>
-     
+
     </>
   );
 };

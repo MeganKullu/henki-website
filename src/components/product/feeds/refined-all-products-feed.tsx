@@ -7,7 +7,7 @@ import SectionHeader from '@components/common/section-header';
 import { useModalAction } from '@components/common/modal/modal.context';
 import Alert from '@components/ui/alert';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { usePathname, useRouter } from 'next/navigation';
 import { LIMITS } from '@framework/utils/limits';
 import { Product } from '@framework/types';

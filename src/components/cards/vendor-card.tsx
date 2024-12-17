@@ -3,7 +3,7 @@ import Image from '@components/ui/image';
 import { ROUTES } from '@utils/routes';
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 type VendorCardProps = {
   lang: string;

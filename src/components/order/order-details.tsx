@@ -4,7 +4,7 @@ import { OrderItem } from '@framework/types';
 import { useRouter } from 'next/navigation';
 
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 const OrderItemCard = ({ product }: { product: OrderItem }) => {
   const { price: itemTotal } = usePrice({
     amount: product.price * product.quantity,

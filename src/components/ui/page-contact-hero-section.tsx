@@ -2,7 +2,7 @@
 
 import { Attachment } from '@framework/types';
 import { useIsMounted } from '@utils/use-is-mounted';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface HeaderProps {
   lang: string;

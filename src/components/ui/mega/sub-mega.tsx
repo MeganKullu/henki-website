@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useTranslation } from 'src/app/i18n/client';
+
 import ListMenu from '@components/ui/mega/mega-menu';
 import Container from '@components/ui/container';
 import Image from '@components/ui/image';
@@ -15,7 +15,7 @@ const SubMega = ({ item, lang }: any) => {
     mega_bannerUrl,
     mega_contentBottom,
   } = item ?? {};
-    const { t } = useTranslation(lang, 'menu');
+  // const { t } = useTranslation(lang, 'menu');
   const widthCateArea = mega_bannerMode;
   let isBannerMode = false;
   if (mega_bannerMode == 'left' || mega_bannerMode == 'right') isBannerMode = true;
@@ -49,9 +49,8 @@ const SubMega = ({ item, lang }: any) => {
           </div>
           {isBannerMode && (
             <div
-              className={`imageArea basis-1/4 ${
-                mega_bannerMode == 'left' && 'order-first'
-              }`}
+              className={`imageArea basis-1/4 ${mega_bannerMode == 'left' && 'order-first'
+                }`}
             >
               <Link href={mega_bannerUrl} className="text-skin-base ">
                 <div className="card-img-container max-w-[350px]">

@@ -25,7 +25,7 @@ import SocialShareBox from '@components/ui/social-share-box';
 import ProductDetailsTab from '@components/product/product-details/product-tab';
 import VariationPrice from './variation-price';
 import isEqual from 'lodash/isEqual';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');
@@ -50,8 +50,8 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
       currencyCode: 'USD',
     }
   );
-  
-  const {  payment } = footer;
+
+  const { payment } = footer;
   const handleChange = () => {
     setShareButtonStatus(!shareButtonStatus);
   };
@@ -60,9 +60,9 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
-      Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
-      )
+    Object.keys(variations).every((variation) =>
+      attributes.hasOwnProperty(variation)
+    )
     : true;
   let selectedVariation: any = {};
   if (isSelected) {
@@ -235,15 +235,14 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
             {!isEmpty(selectedVariation) && (
               <span className="text-sm font-medium text-yellow">
                 {selectedVariation?.is_disable ||
-                selectedVariation.quantity === 0
+                  selectedVariation.quantity === 0
                   ? t('text-out-stock')
-                  : `${
-                      t('text-only') +
-                      ' ' +
-                      selectedVariation.quantity +
-                      ' ' +
-                      t('text-left-item')
-                    }`}
+                  : `${t('text-only') +
+                  ' ' +
+                  selectedVariation.quantity +
+                  ' ' +
+                  t('text-left-item')
+                  }`}
               </span>
             )}
           </div>
@@ -259,7 +258,7 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
               disabled={
                 isInCart(item.id)
                   ? getItemFromCart(item.id).quantity + selectedQuantity >=
-                    Number(item.stock)
+                  Number(item.stock)
                   : selectedQuantity >= Number(item.stock)
               }
               lang={lang}
@@ -278,9 +277,8 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
                 variant="border"
                 onClick={addToWishlist}
                 loading={addToWishlistLoader}
-                className={`w-full md:w-96 group hover:text-brand ${
-                  favorite === true && 'text-brand'
-                }`}
+                className={`w-full md:w-96 group hover:text-brand ${favorite === true && 'text-brand'
+                  }`}
               >
                 {favorite === true ? (
                   <IoIosHeart className="text-2xl md:text-[26px] ltr:mr-2 rtl:ml-2 transition-all" />
@@ -293,20 +291,18 @@ const ProductSingleDetails: React.FC<{ lang: string }> = ({ lang }) => {
               <div className="w-full md:w-80 relative group">
                 <Button
                   variant="border"
-                  className={`w-full hover:text-brand ${
-                    shareButtonStatus === true && 'text-brand'
-                  }`}
+                  className={`w-full hover:text-brand ${shareButtonStatus === true && 'text-brand'
+                    }`}
                   onClick={handleChange}
                 >
                   <IoArrowRedoOutline className="text-2xl md:text-[26px] ltr:mr-2 rtl:ml-2 transition-all group-hover:text-brand" />
                   {t('text-share')}
                 </Button>
                 <SocialShareBox
-                  className={`absolute z-10 ltr:right-0 rtl:left-0 w-[300px] md:min-w-[400px] transition-all duration-300 ${
-                    shareButtonStatus === true
+                  className={`absolute z-10 ltr:right-0 rtl:left-0 w-[300px] md:min-w-[400px] transition-all duration-300 ${shareButtonStatus === true
                       ? 'visible opacity-100 top-full'
                       : 'opacity-0 invisible top-[130%]'
-                  }`}
+                    }`}
                   shareUrl={productUrl}
                   lang={lang}
                 />

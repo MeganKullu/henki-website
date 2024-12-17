@@ -3,7 +3,7 @@
 import VendorCard from '@components/cards/vendor-card';
 import { useShopsQuery } from '@framework/shop/get-shops';
 import Alert from '@components/ui/alert';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Heading from '@components/ui/heading';
 
 const ShopsPageContent: React.FC<{ lang: string }> = ({ lang }) => {

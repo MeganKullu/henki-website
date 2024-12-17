@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Link from '@components/ui/link';
 import Image from '@components/ui/image';
 import ArrowRight from '@components/icons/arrow-right';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const data = {
   title: 'app-heading',

@@ -5,11 +5,10 @@ import { searchProductPlaceholder } from '@assets/placeholders';
 import usePrice from "@framework/product/use-price";
 
 type SearchProductProps = {
-  lang: string;
   item: any;
 };
 
-const SearchProduct: React.FC<SearchProductProps> = ({ lang, item }) => {
+const SearchProduct: React.FC<SearchProductProps> = ({ item }) => {
   const { name, image, unit, slug, product_type } = item ?? {};
   const { price, basePrice, discount } = usePrice({
     amount: item?.sale_price ? item?.sale_price : item?.price,
@@ -28,7 +27,7 @@ const SearchProduct: React.FC<SearchProductProps> = ({ lang, item }) => {
 
   return (
     <Link
-      href={`/${lang}${ROUTES.PRODUCT}/${item?.slug}`}
+      href={`/${ROUTES.PRODUCT}/${item?.slug}`}
       className="flex items-center justify-start w-full h-auto group"
     >
       <div className="relative flex w-20 rounded-md overflow-hidden flex-shrink-0 cursor-pointer me-4">

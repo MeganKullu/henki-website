@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import { Disclosure } from '@headlessui/react';
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 import useQueryParam from '@utils/use-query-params';
 
 export const DietaryFilter = ({ lang }: { lang: string }) => {

@@ -12,7 +12,7 @@ const fetchOrders = async ({ queryKey }: any) => {
 };
 
 const useOrdersQuery = (options: QueryOptionsType) => {
-  return useQuery([API_ENDPOINTS.ORDERS, options], fetchOrders);
+  // return useQuery([API_ENDPOINTS.ORDERS, options], fetchOrders);
 };
 
 export { useOrdersQuery, fetchOrders };

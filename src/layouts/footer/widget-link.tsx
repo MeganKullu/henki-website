@@ -1,4 +1,4 @@
-import { useTranslation } from 'src/app/i18n/client';
+
 import Heading from '@components/ui/heading';
 import Link from '@components/ui/link';
 
@@ -16,9 +16,9 @@ interface Props {
   };
 }
 
-const WidgetLink: React.FC<Props> = ({lang, className, data }) => {
+const WidgetLink: React.FC<Props> = ({ lang, className, data }) => {
   const { widgetTitle, lists } = data;
-  const { t } = useTranslation(lang,'footer');
+  const { t } = useTranslation(lang, 'footer');
   return (
     <div className={`${className}`}>
       <Heading

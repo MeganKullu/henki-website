@@ -6,7 +6,7 @@ import { FaChevronDown } from 'react-icons/fa';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLogoutMutation } from '@framework/auth/use-logout';
 import LogoutIcon from '@components/icons/account-logout';
-import { useTranslation } from 'src/app/i18n/client';
+
 type Option = {
   name: string;
   slug: string;
@@ -74,10 +74,9 @@ export default function AccountNavMobile({
                 <Listbox.Option
                   key={index}
                   className={({ active }) =>
-                    `cursor-pointer relative py-3 px-4 md:px-5 ${
-                      active
-                        ? 'text-brand-dark bg-fill-dropdown-hover'
-                        : 'bg-brand-light'
+                    `cursor-pointer relative py-3 px-4 md:px-5 ${active
+                      ? 'text-brand-dark bg-fill-dropdown-hover'
+                      : 'bg-brand-light'
                     }`
                   }
                   value={option}
@@ -86,9 +85,8 @@ export default function AccountNavMobile({
                     <span className="flex items-center">
                       {option?.icon}
                       <span
-                        className={`block truncate ltr:pl-2.5 rtl:pr-2.5 md:ltr:pl-3 md:rtl:pr-3 ${
-                          selected ? 'font-medium' : 'font-normal'
-                        }`}
+                        className={`block truncate ltr:pl-2.5 rtl:pr-2.5 md:ltr:pl-3 md:rtl:pr-3 ${selected ? 'font-medium' : 'font-normal'
+                          }`}
                       >
                         {t(option?.name)}
                       </span>

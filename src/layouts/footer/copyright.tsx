@@ -1,6 +1,6 @@
 import Image from '@components/ui/image';
 import { siteSettings } from '@settings/site-settings';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Container from '@components/ui/container';
 interface CopyrightProps {
   lang: string;

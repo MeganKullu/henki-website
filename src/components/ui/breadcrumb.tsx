@@ -6,7 +6,7 @@ import useBreadcrumb, { convertBreadcrumbTitle } from '@utils/use-breadcrumb';
 import { IoChevronForward } from 'react-icons/io5';
 import { IoHomeOutline } from 'react-icons/io5';
 import { ROUTES } from '@utils/routes';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface Props {
   children: any;
@@ -86,7 +86,7 @@ const Breadcrumb: React.FC<{ separator?: string; lang: string }> = ({
 
       {breadcrumbs?.map((breadcrumb: any) => (
         <ActiveLink
-            href={`${breadcrumb.href}`}
+          href={`${breadcrumb.href}`}
           activeClassName="text-heading"
           key={breadcrumb.href}
           legacyBehavior

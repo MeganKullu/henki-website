@@ -11,11 +11,11 @@ const fetchBlogPost = async ({ queryKey }: any) => {
 
 };
 
-const useBlogPostQuery = (options: QueryOptionsType) => {
-  return useQuery<Blog[], Error>(
-      [API_ENDPOINTS.BLOGDETAILS, options],
-      fetchBlogPost
-  );
-};
+// const useBlogPostQuery = (options: QueryOptionsType) => {
+//   return useQuery<Blog[], Error>(
+//       [API_ENDPOINTS.BLOGDETAILS, options],
+//       fetchBlogPost
+//   );
+// };
 
-export { useBlogPostQuery, fetchBlogPost };
+// export { useBlogPostQuery, fetchBlogPost };

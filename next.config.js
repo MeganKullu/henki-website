@@ -15,13 +15,4 @@ module.exports = {
       ignoreDuringBuilds: true,
     },
   }),
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-        permanent: true,
-      },
-    ];
-  },
 };

@@ -9,7 +9,7 @@ import ProductAttributes from '@components/product/product-attributes';
 import { generateCartItem } from '@utils/generate-cart-item';
 import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
-import { useTranslation } from 'src/app/i18n/client';
+
 import ThumbnailCarousel from '@components/ui/carousel/thumbnail-carousel';
 import Image from '@components/ui/image';
 import CartIcon from '@components/icons/cart-icon';
@@ -81,9 +81,9 @@ export default function ProductPopup({ lang }: { lang: string }) {
   const { payment } = footer;
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
-      Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
-      )
+    Object.keys(variations).every((variation) =>
+      attributes.hasOwnProperty(variation)
+    )
     : true;
   let selectedVariation: any = {};
   if (isSelected) {
@@ -238,15 +238,14 @@ export default function ProductPopup({ lang }: { lang: string }) {
                 {!isEmpty(selectedVariation) && (
                   <span className="text-sm font-medium text-yellow">
                     {selectedVariation?.is_disable ||
-                    selectedVariation.quantity === 0
+                      selectedVariation.quantity === 0
                       ? t('text-out-stock')
-                      : `${
-                          t('text-only') +
-                          ' ' +
-                          selectedVariation.quantity +
-                          ' ' +
-                          t('text-left-item')
-                        }`}
+                      : `${t('text-only') +
+                      ' ' +
+                      selectedVariation.quantity +
+                      ' ' +
+                      t('text-left-item')
+                      }`}
                   </span>
                 )}
               </div>
@@ -262,7 +261,7 @@ export default function ProductPopup({ lang }: { lang: string }) {
                   disabled={
                     isInCart(item.id)
                       ? getItemFromCart(item.id).quantity + selectedQuantity >=
-                        Number(item.stock)
+                      Number(item.stock)
                       : selectedQuantity >= Number(item.stock)
                   }
                   lang={lang}
@@ -281,9 +280,8 @@ export default function ProductPopup({ lang }: { lang: string }) {
                     variant="border"
                     onClick={addToWishlist}
                     loading={addToWishlistLoader}
-                    className={`group hover:text-brand ${
-                      favorite === true && 'text-brand'
-                    }`}
+                    className={`group hover:text-brand ${favorite === true && 'text-brand'
+                      }`}
                   >
                     {favorite === true ? (
                       <IoIosHeart className="text-2xl md:text-[26px] ltr:mr-2 rtl:ml-2 transition-all" />
@@ -296,20 +294,18 @@ export default function ProductPopup({ lang }: { lang: string }) {
                   <div className="relative group">
                     <Button
                       variant="border"
-                      className={`w-full hover:text-brand ${
-                        shareButtonStatus === true && 'text-brand'
-                      }`}
+                      className={`w-full hover:text-brand ${shareButtonStatus === true && 'text-brand'
+                        }`}
                       onClick={handleChange}
                     >
                       <IoArrowRedoOutline className="text-2xl md:text-[26px] ltr:mr-2 rtl:ml-2 transition-all group-hover:text-brand" />
                       {t('text-share')}
                     </Button>
                     <SocialShareBox
-                      className={`absolute z-10 ltr:right-0 rtl:left-0 w-[300px] md:min-w-[400px] transition-all duration-300 ${
-                        shareButtonStatus === true
+                      className={`absolute z-10 ltr:right-0 rtl:left-0 w-[300px] md:min-w-[400px] transition-all duration-300 ${shareButtonStatus === true
                           ? 'visible opacity-100 top-full'
                           : 'opacity-0 invisible top-[130%]'
-                      }`}
+                        }`}
                       shareUrl={productUrl}
                       lang={lang}
                     />

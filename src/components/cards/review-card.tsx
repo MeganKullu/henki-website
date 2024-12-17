@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import StarIcon from '@components/icons/star-icon';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ReviewProps {
   lang: string;

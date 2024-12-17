@@ -1,6 +1,6 @@
 import { usePaymentQuery } from '@framework/payment/payment';
 import PaymentBox from './payment-content';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const PaymentPage: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');

@@ -1,7 +1,7 @@
 import { Rubik } from 'next/font/google';
 import { Metadata } from 'next';
 
-import './[lang]/globals.css';
+import '../assets/global.css';
 
 const rubik = Rubik({
   weight: ['300','400', '500', '600', '700'],
@@ -13,7 +13,7 @@ const rubik = Rubik({
 
 
 export const metadata: Metadata = {
-  title: 'Razor',
+  title: 'Henki Kenya Limited',
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html suppressHydrationWarning={true}>
       <body
         // to prevent any warning that is caused by third party extensions like Grammarly
         className={`${rubik.variable}`}

@@ -3,7 +3,7 @@ import OrderDetails from '@components/order/order-details';
 import { useOrderQuery } from '@framework/order/get-order';
 import { useRouter } from 'next/navigation';
 import usePrice from '@framework/product/use-price';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export default function OrderInformation({ lang }: { lang: string }) {
   // const {

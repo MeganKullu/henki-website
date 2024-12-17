@@ -5,7 +5,7 @@ import Button from '@components/ui/button';
 import TextArea from '@components/ui/form/text-area';
 import { useForm } from 'react-hook-form';
 import { useIsMounted } from '@utils/use-is-mounted';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ContactFormValues {
   name: string;

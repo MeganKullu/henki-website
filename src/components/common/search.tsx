@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
-import { useSearchQuery } from '@framework/product/use-search';
+// import { useSearchQuery } from '@framework/product/use-search';
 import SearchBox from '@components/common/search-box';
 import SearchProduct from '@components/common/search-product';
 import SearchResultLoader from '@components/ui/loaders/search-result-loader';
 import useFreezeBodyScroll from '@utils/use-freeze-body-scroll';
-import Scrollbar from '@components/ui/scrollbar';
+// import Scrollbar from '@components/ui/scrollbar';
 import { useUI } from '@contexts/ui.context';
 
 type Props = {
-  lang: string;
   className?: string;
   searchId?: string;
   variant?: 'border' | 'fill';
@@ -21,7 +20,6 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
       className = 'md:w-[730px] 2xl:w-[800px]',
       searchId = 'search',
       variant = 'border',
-      lang,
     },
     ref
   ) => {
@@ -33,9 +31,9 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
     } = useUI();
     const [searchText, setSearchText] = useState('');
     const [inputFocus, setInputFocus] = useState<boolean>(false);
-    const { data, isLoading } = useSearchQuery({
-      text: searchText,
-    });
+    // const { data, isLoading } = useSearchQuery({
+    //   text: searchText,
+    // });
 
     useFreezeBodyScroll(
       inputFocus === true || displaySearch || displayMobileSearch
@@ -88,14 +86,13 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
               onClear={clear}
               onFocus={() => enableInputFocus()}
               variant={variant}
-              lang={lang}
             />
           </div>
           {/* End of searchbox */}
 
           {searchText && (
             <div className="w-full absolute top-[56px] ltr:left-0 rtl:right-0 bg-brand-light rounded-md flex flex-col overflow-hidden shadow-dropDown z-30">
-              <Scrollbar className="os-host-flexbox">
+              {/* <Scrollbar className="os-host-flexbox">
                 <div className="w-full max-h-[380px]">
                   {isLoading
                     ? Array.from({ length: 15 }).map((_, idx) => (
@@ -115,11 +112,11 @@ const Search = React.forwardRef<HTMLDivElement, Props>(
                           className="py-2.5 ps-5 pe-10 border-b border-black/5 scroll-snap-align-start transition-colors duration-200 hover:bg-fill-four"
                           onClick={clear}
                         >
-                          <SearchProduct item={item} key={index} lang={lang} />
+                          <SearchProduct item={item} key={index}  />
                         </div>
                       ))}
                 </div>
-              </Scrollbar>
+              </Scrollbar> */}
             </div>
           )}
           {/* End of search result */}

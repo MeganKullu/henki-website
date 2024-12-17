@@ -18,7 +18,7 @@ import {
   IoCallOutline,
   IoGlobeOutline,
 } from 'react-icons/io5';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ShopSidebarProps {
   data: any;

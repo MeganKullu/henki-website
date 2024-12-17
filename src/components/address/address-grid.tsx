@@ -7,7 +7,7 @@ import { RadioGroup } from '@headlessui/react';
 import { useModalAction } from '@components/common/modal/modal.context';
 import { formatAddress } from '@utils/format-address';
 import Button from '@components/ui/button';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const AddressGrid: React.FC<{ address?: any; lang: string }> = ({
   address,

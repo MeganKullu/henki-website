@@ -14,7 +14,7 @@ import Switch from '@components/ui/switch';
 import CloseButton from '@components/ui/close-button';
 import cn from 'classnames';
 import { ROUTES } from '@utils/routes';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface SignUpFormProps {
   lang: string;
@@ -73,7 +73,7 @@ export default function SignUpForm({
             <h4 className="text-xl font-semibold text-brand-dark sm:text-2xl sm:pt-3 ">
               {t('common:text-sign-up-for-free')}
             </h4>
-            
+
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -150,16 +150,16 @@ export default function SignUpForm({
                   {t('common:text-register')}
                 </Button>
               </div>
-                <div className="mt-3 mb-1 text-sm text-center sm:text-base text-body">
-              {t('common:text-already-registered')}
-              <button
-                type="button"
-                className="text-sm ltr:ml-1 rtl:mr-1 sm:text-base text-brand hover:no-underline focus:outline-none"
-                onClick={handleSignIn}
-              >
-                {t('common:text-sign-in-now')}
-              </button>
-            </div>
+              <div className="mt-3 mb-1 text-sm text-center sm:text-base text-body">
+                {t('common:text-already-registered')}
+                <button
+                  type="button"
+                  className="text-sm ltr:ml-1 rtl:mr-1 sm:text-base text-brand hover:no-underline focus:outline-none"
+                  onClick={handleSignIn}
+                >
+                  {t('common:text-sign-in-now')}
+                </button>
+              </div>
             </div>
           </form>
         </div>

@@ -1,6 +1,6 @@
 import TextArea from '@components/ui/form/text-area';
 import { useForm } from 'react-hook-form';
-import { useTranslation } from 'src/app/i18n/client';
+
 import Text from '@components/ui/text';
 
 interface ContactFormValues {

@@ -1,11 +1,10 @@
 import CartIcon from '@components/icons/cart-icon';
 import { useCart } from '@contexts/cart/cart.context';
 import { useUI } from '@contexts/ui.context';
-import { useTranslation } from 'src/app/i18n/client';
 import cn from 'classnames';
 
 type CartButtonProps = {
-  lang: string;
+  // lang: string;
   className?: string;
   iconClassName?: string;
   hideLabel?: boolean;
@@ -13,13 +12,12 @@ type CartButtonProps = {
 };
 
 const CartButton: React.FC<CartButtonProps> = ({
-  lang,
   className,
   iconClassName = 'text-brand',
   hideLabel,
   // isShowing,
 }) => {
-  const { t } = useTranslation(lang, 'common');
+
   const { openDrawer, setDrawerView } = useUI();
   const { totalItems } = useCart();
   function handleCartOpen() {
@@ -46,7 +44,7 @@ const CartButton: React.FC<CartButtonProps> = ({
         </div>
         {!hideLabel && (
         <span className="text-sm font-normal text-white ltr:ml-2 rtl:mr-2">
-          {t('text-cart')}
+          text-cart
         </span>
       )}
       

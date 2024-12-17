@@ -1,7 +1,7 @@
 import ArrowIcon from '@components/icons/arrow-icon';
 import Link from '@components/ui/link';
 import { LinkProps } from 'next/link';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface Props {
   lang: string;

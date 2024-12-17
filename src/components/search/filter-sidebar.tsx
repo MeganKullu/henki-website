@@ -5,7 +5,7 @@ import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import { getDirection } from '@utils/get-direction';
 import { usePathname } from 'next/navigation';
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const FilterSidebar = ({ lang }: { lang: string }) => {
   const { t } = useTranslation(lang, 'common');

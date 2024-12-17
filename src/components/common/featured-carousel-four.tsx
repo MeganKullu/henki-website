@@ -4,8 +4,8 @@ import FeedbackIcon from '@components/icons/featured/feedback-icon';
 
 import FeaturedCard from '@components/cards/featured-card';
 import Carousel from '@components/ui/carousel/carousel';
-import {SwiperSlide} from '@components/ui/carousel/slider';
-import {ROUTES} from "@utils/routes";
+import { SwiperSlide } from '@components/ui/carousel/slider';
+import { ROUTES } from "@utils/routes";
 import DeliveryIcon from "@components/icons/featured/delivery-icon";
 import CardIcon from "@components/icons/featured/card-icon";
 import SupportIcon from "@components/icons/featured/support-icon";
@@ -69,7 +69,7 @@ const data = [
 ];
 
 interface Props {
-    lang: string;
+    // lang: string;
     className?: string;
     classNameCarousel?: string;
 }
@@ -95,11 +95,11 @@ const breakpoints = {
     },
 };
 
-const FeatureCarousel: React.FC<Props> = ({lang, className = 'mb-7 md:mb-10 ',classNameCarousel }) => {
+const FeatureCarousel: React.FC<Props> = ({ className = 'mb-7 md:mb-10 ', classNameCarousel }) => {
     return (
         <div className={`mb-7 md:mb-10 ${className}`}>
             <Carousel
-                lang={lang}
+                // lang={lang}
                 autoplay={false}
                 breakpoints={breakpoints}
                 prevActivateId="featured-carousel-button-prev"
@@ -110,7 +110,7 @@ const FeatureCarousel: React.FC<Props> = ({lang, className = 'mb-7 md:mb-10 ',cl
             >
                 {data?.map((item) => (
                     <SwiperSlide key={`featured-key-${item.id}`}>
-                        <FeaturedCard item={item} layout={"home4"} lang={lang} />
+                        <FeaturedCard item={item} layout={"home7"} />
                     </SwiperSlide>
                 ))}
 

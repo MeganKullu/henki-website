@@ -10,7 +10,7 @@ import ProductCardLoader from '@components/ui/loaders/product-card-loader';
 import { Product } from '@framework/types';
 import { useBestSellerGroceryProductsQuery } from '@framework/product/get-all-best-seller-grocery-products';
 import ProductCardAlpine from '@components/product/product-cards/product-card-vertical';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 function renderer({ days, hours, minutes, seconds, completed }: any) {
   if (completed) {

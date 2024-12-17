@@ -21,7 +21,7 @@ interface ProductsCarouselProps {
   uniqueKey?: string;
   carouselBreakpoint?: {} | any;
   borderCarousel?: boolean;
-  lang: string;
+  // lang: string;
     rowCarousel?: number;
     variant?: string;
 }
@@ -49,7 +49,7 @@ const breakpoints = {
 
 const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
   sectionHeading,
-  categorySlug,
+  // categorySlug,
   className = '',
   products,
   loading,
@@ -57,12 +57,12 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
   limit,
   uniqueKey,
   carouselBreakpoint,
-  lang,
+  // lang,
   variant = 'default',
   borderCarousel,
   rowCarousel= 1,
 }) => {
-  const dir = getDirection(lang);
+  // const dir = getDirection(lang);
   return (
     <div className={cn('relative', className)}>
       {sectionHeading && (
@@ -72,7 +72,7 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
             className={cn('mb-3', {
               'block-title ': variant === 'default',
             })}
-            lang={lang}
+            // lang={lang}
           />
         </div>
       )}
@@ -94,9 +94,9 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
             className=""
             prevButtonClassName="start-3  -top-12 3xl:top-auto 3xl:-translate-y-2 4xl:-translate-y-10"
             nextButtonClassName={`end-3 -top-12 3xl:top-auto transform 2xl:translate-x-0 3xl:-translate-y-2 ${
-              dir === 'rtl' ? 'xl:-translate-x-2.5' : 'xl:translate-x-2.5'
+              'rtl' ? 'xl:-translate-x-2.5' : 'xl:translate-x-2.5'
             }`}
-            lang={lang}
+            
           >
             {loading && !products?.length ? (
               Array.from({ length: limit! }).map((_, idx) => (
@@ -118,13 +118,13 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({
                       <ProductCardV2
                         key={`${uniqueKey}-${product.id}`}
                         product={product}
-                        lang={lang}
+                        // lang={lang}
                       />
                     ) : (
                       <ProductCard
                         key={`${uniqueKey}-${product.id}`}
                         product={product}
-                        lang={lang}
+                        // lang={lang}
                       />
                     )}
                   </SwiperSlide>

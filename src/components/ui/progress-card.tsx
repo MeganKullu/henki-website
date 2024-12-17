@@ -1,4 +1,4 @@
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface Props {
   soldProduct?: number;

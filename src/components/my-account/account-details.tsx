@@ -11,7 +11,7 @@ import {
 } from '@framework/customer/use-update-customer';
 import Switch from '@components/ui/switch';
 import Text from '@components/ui/text';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const defaultValues = {};
 
@@ -146,7 +146,7 @@ const AccountDetails: React.FC<{ lang: string }> = ({ lang }) => {
             />
           </div>
         </div>
-       
+
         <div className="relative flex pb-2 mt-5 sm:ltr:ml-auto sm:rtl:mr-auto lg:pb-0">
           <Button
             type="submit"

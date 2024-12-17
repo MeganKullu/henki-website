@@ -11,7 +11,7 @@ import {
 } from '@components/order/price';
 
 import { useUI } from '@contexts/ui.context';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const OrderDrawer: React.FC<{ lang: string }> = ({ lang }) => {
   const { t } = useTranslation(lang, 'common');

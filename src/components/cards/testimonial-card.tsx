@@ -3,7 +3,7 @@ import Image from '@components/ui/image';
 import Link from '@components/ui/link';
 import { LinkProps } from 'next/link';
 import Text from '@components/ui/text';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { collectionPlaceholder } from '@assets/placeholders';
 import QuoteIcon from "@components/icons/quote-alt-icon";
 
@@ -21,7 +21,7 @@ interface Props {
 }
 
 const TestimonialCard: React.FC<Props> = ({
-   lang,
+  lang,
   collection,
   imgWidth = 80,
   imgHeight = 80,
@@ -32,18 +32,18 @@ const TestimonialCard: React.FC<Props> = ({
   return (
     <>
       <div className="testimonial-text px-4 pt-4  pb-14  bg-[#f2f6f8]">
-        <QuoteIcon className="my-3 mb-2 w-full text-center"/>
+        <QuoteIcon className="my-3 mb-2 w-full text-center" />
         <Text variant="small" className="text-center">
           {t(`${description}`)}
         </Text>
       </div>
       <div className="testimonial-image m-auto w-[80px] relative -mt-10">
         <Image
-            src={image ?? collectionPlaceholder}
-            alt={t(author_name) || t('text-card-thumbnail')}
-            width={imgWidth}
-            height={imgHeight}
-            className="bg-skin-thumbnail object-cover transform transition duration-300 ease-in-out rounded-full "
+          src={image ?? collectionPlaceholder}
+          alt={t(author_name) || t('text-card-thumbnail')}
+          width={imgWidth}
+          height={imgHeight}
+          className="bg-skin-thumbnail object-cover transform transition duration-300 ease-in-out rounded-full "
         />
       </div>
 

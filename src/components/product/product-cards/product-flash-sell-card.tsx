@@ -1,12 +1,12 @@
 import cn from 'classnames';
 import Image from '@components/ui/image';
 import usePrice from '@framework/product/use-price';
-import {Product} from '@framework/types';
-import {useModalAction} from '@components/common/modal/modal.context';
-import Countdown, {zeroPad} from 'react-countdown';
-import {productPlaceholder} from '@assets/placeholders';
+import { Product } from '@framework/types';
+import { useModalAction } from '@components/common/modal/modal.context';
+import Countdown, { zeroPad } from 'react-countdown';
+import { productPlaceholder } from '@assets/placeholders';
 import ProgressCard from '@components/ui/progress-card';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ProductProps {
     lang: string;
@@ -15,7 +15,7 @@ interface ProductProps {
     date?: string | number | Date | undefined;
 }
 
-const renderer = ({days, hours, minutes, seconds, completed}: any) => {
+const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
     if (completed) {
         return null;
     } else {
@@ -24,47 +24,47 @@ const renderer = ({days, hours, minutes, seconds, completed}: any) => {
                 className="flex  text-base xl:text-lg text-skin-base text-opacity-50 font-semibold -mx-2.5">
                 <span
                     className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-gray-200 text-skin-base rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
-                  {zeroPad(days)}
+                    {zeroPad(days)}
                 </span>
                 :
                 <span
                     className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-gray-200 text-skin-base rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
-          {zeroPad(hours)}
-        </span>
+                    {zeroPad(hours)}
+                </span>
                 :
                 <span
                     className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-gray-200 text-skin-base rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
-          {zeroPad(minutes)}
-        </span>
+                    {zeroPad(minutes)}
+                </span>
                 :
                 <span
                     className="flex items-center justify-center min-w-[40px] md:min-w-[50px] min-h-[36px] md:min-h-[40px] bg-gray-200 text-skin-base rounded p-1 mx-1 md:mx-1.5 lg:mx-2.5">
-          {zeroPad(seconds)}
-        </span>
+                    {zeroPad(seconds)}
+                </span>
             </div>
         );
     }
 };
 
 const ProductFlashSellCard: React.FC<ProductProps> = ({
-                                                          lang,
-                                                          product,
-                                                          className,
-                                                          date,
-                                                      }) => {
-    const {name, image, quantity, sold, product_type} = product ?? {};
-    const {openModal} = useModalAction();
-    const {t} = useTranslation(lang,'common');
-    const {price, basePrice} = usePrice({
+    lang,
+    product,
+    className,
+    date,
+}) => {
+    const { name, image, quantity, sold, product_type } = product ?? {};
+    const { openModal } = useModalAction();
+    const { t } = useTranslation(lang, 'common');
+    const { price, basePrice } = usePrice({
         amount: product?.sale_price ? product?.sale_price : product?.price,
         baseAmount: product?.price,
         currencyCode: 'USD',
     });
-    const {price: minPrice} = usePrice({
+    const { price: minPrice } = usePrice({
         amount: product?.min_price ?? 0,
         currencyCode: 'USD',
     });
-    const {price: maxPrice} = usePrice({
+    const { price: maxPrice } = usePrice({
         amount: product?.max_price ?? 0,
         currencyCode: 'USD',
     });
@@ -98,7 +98,7 @@ const ProductFlashSellCard: React.FC<ProductProps> = ({
                     <div className="w-full h-full absolute top-0 z-10 -mx-0.5 sm:-mx-1">
                         <span
                             className="text-[10px]  text-skin-inverted uppercase inline-block bg-skin-primary rounded-sm px-2.5 pt-1 pb-[3px] mx-0.5 sm:mx-1">
-                          {t('text-on-sale')}
+                            {t('text-on-sale')}
                         </span>
                     </div>
                 </div>
@@ -109,10 +109,10 @@ const ProductFlashSellCard: React.FC<ProductProps> = ({
                         {name}
                     </h2>
                     <div className="space-s-2 mb-1 lg:mb-4">
-                          <span
-                              className="inline-block font-semibold text-sm sm:text-15px lg:text-base text-skin-primary">
+                        <span
+                            className="inline-block font-semibold text-sm sm:text-15px lg:text-base text-skin-primary">
                             {product_type === 'variable' ? `${minPrice} - ${maxPrice}` : price}
-                          </span>
+                        </span>
                         {basePrice && (
                             <del className="text-sm text-skin-base text-opacity-70">
                                 {basePrice}
@@ -120,7 +120,7 @@ const ProductFlashSellCard: React.FC<ProductProps> = ({
                         )}
                     </div>
                     <h2 className="text-skin-base text-opacity-60 sm:text-sm lg:text-15px mb-2"> {t('text-offer-end')}</h2>
-                    <Countdown date={date} intervalDelay={1000} renderer={renderer}/>
+                    <Countdown date={date} intervalDelay={1000} renderer={renderer} />
                     <ProgressCard
                         soldProduct={sold}
                         totalProduct={quantity}

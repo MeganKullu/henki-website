@@ -7,7 +7,7 @@ import Countdown from '@components/common/countdown';
 import Header from '@layouts/default/header';
 import Footer from '@layouts/footer/footer';
 import MobileNavigation from '@layouts/mobile-navigation/mobile-navigation';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { useIsMounted } from '@utils/use-is-mounted';
 
 function ClientRenderedHighLightedBar({ lang }: { lang: string }) {

@@ -13,7 +13,7 @@ import ShopSidebarDrawer from '@components/shops/shop-sidebar-drawer';
 import AllProductFeed from '@components/product/feeds/all-products-feed';
 import useWindowSize from '@utils/use-window-size';
 import motionProps from '@components/common/drawer/motion';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export default function ShopsSingleDetails({ lang }: { lang: string }) {
     const { t } = useTranslation(lang, 'common');

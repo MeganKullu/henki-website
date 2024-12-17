@@ -8,7 +8,7 @@ import {
   useChangePasswordMutation,
   ChangePasswordInputType,
 } from '@framework/customer/use-change-password';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const defaultValues = {
   oldPassword: '',

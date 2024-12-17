@@ -1,7 +1,7 @@
 'use client';
 
 import { Attachment } from '@framework/types';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface HeroSectionProps {
   lang: string;

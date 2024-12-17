@@ -6,7 +6,7 @@ import PhoneIcon from '@components/icons/contact/phone-icon';
 import MailIcon from '@components/icons/contact/mail-icon';
 import Text from '@components/ui/text';
 import Heading from '@components/ui/heading';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const data = [
   {

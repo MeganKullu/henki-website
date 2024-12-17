@@ -7,7 +7,7 @@ import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import cn from 'classnames';
 import Rate from '@components/ui/rate';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface ReviewFormProps {
   className?: string;

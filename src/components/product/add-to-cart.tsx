@@ -3,7 +3,7 @@ import { useCart } from '@contexts/cart/cart.context';
 import { generateCartItem } from '@utils/generate-cart-item';
 import PlusIcon from '@components/icons/plus-icon';
 import useWindowSize from '@utils/use-window-size';
-import { useTranslation } from 'src/app/i18n/client';
+// 
 
 interface Props {
   lang: string;
@@ -20,7 +20,7 @@ const AddToCart = ({
   variant = 'mercury',
 }: Props) => {
   const { width } = useWindowSize();
-  const { t } = useTranslation(lang, 'common');
+  // const { t } = useTranslation(lang, 'common');
   const {
     addItemToCart,
     removeItemFromCart,
@@ -50,7 +50,7 @@ const AddToCart = ({
         onClick={handleAddClick}
         disabled={disabled || outOfStock}
       >
-        {t('text-add-to-cart')}
+        {('text-add-to-cart')}
       </button>
     ) : (
       <button
@@ -59,7 +59,7 @@ const AddToCart = ({
         onClick={handleAddClick}
         disabled={disabled || outOfStock}
       >
-        {t('text-add-to-cart')}
+        {('text-add-to-cart')}
       </button>
     )
   ) : (

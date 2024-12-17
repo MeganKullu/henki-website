@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const deliveryTip = ['$5', '$10', '$15', '$20', '$25'];
 
@@ -32,9 +32,8 @@ export default function DeliveryTips({ lang }: { lang: string }) {
                   <div className="text-center">
                     <RadioGroup.Label
                       as="p"
-                      className={`text-base font-semibold  ${
-                        checked ? 'text-brand-light' : 'text-brand-dark'
-                      }`}
+                      className={`text-base font-semibold  ${checked ? 'text-brand-light' : 'text-brand-dark'
+                        }`}
                     >
                       {tips}
                     </RadioGroup.Label>

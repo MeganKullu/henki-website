@@ -87,5 +87,5 @@ export function useModalAction() {
     closeModal() {
       dispatch({ type: 'close' });
     },
-  };
+}
 }

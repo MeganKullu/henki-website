@@ -4,7 +4,7 @@ import { Attachment } from '@framework/types';
 import useWindowSize from '@utils/use-window-size';
 import Breadcrumb from '@components/ui/breadcrumb';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface HeaderProps {
   lang: string;

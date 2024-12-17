@@ -1,22 +1,22 @@
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import Link from '@components/ui/link';
-import { useTranslation } from 'src/app/i18n/client';
-import {getDirection} from "@utils/get-direction";
+
+import { getDirection } from "@utils/get-direction";
 
 const ListMenu = ({ lang, dept, data, hasSubMenu, menuIndex }: any) => {
-  const { t } = useTranslation(lang, 'menu');
-    const dir = getDirection(lang);
+  // const { t } = useTranslation(lang, 'menu');
+  const dir = getDirection(lang);
   return (
     <li className="relative">
       <Link
         href={`/${lang}${data.path}`}
         className="flex items-center justify-between py-2 ltr:pl-5 rtl:pr-5 xl:ltr:pl-7 xl:rtl:pr-7 ltr:pr-3 rtl:pl-3 xl:ltr:pr-3.5 xl:rtl:pl-3.5 hover:bg-fill-dropdown-hover hover:text-brand-dark"
       >
-        {t(data.label)}
+        {(data.label)}
         {data.subMenu && (
-            <span className="text-sm mt-0.5 shrink-0">
-              {dir === 'rtl' ? <IoIosArrowBack className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />
-                  : <IoIosArrowForward className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />}
+          <span className="text-sm mt-0.5 shrink-0">
+            {dir === 'rtl' ? <IoIosArrowBack className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />
+              : <IoIosArrowForward className="text-body transition duration-300 ease-in-out group-hover:text-skin-base" />}
           </span>
         )}
       </Link>

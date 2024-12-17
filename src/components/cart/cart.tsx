@@ -11,7 +11,7 @@ import cn from 'classnames';
 import Heading from '@components/ui/heading';
 import Text from '@components/ui/text';
 import DeleteIcon from '@components/icons/delete-icon';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export default function Cart({ lang }: { lang: string }) {
   const { t } = useTranslation(lang, 'common');

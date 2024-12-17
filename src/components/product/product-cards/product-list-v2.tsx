@@ -8,17 +8,17 @@ import { useModalAction } from '@components/common/modal/modal.context';
 import useWindowSize from '@utils/use-window-size';
 import { useCart } from '@contexts/cart/cart.context';
 import AddToCart from '@components/product/add-to-cart';
-import { useTranslation } from 'src/app/i18n/client';
+
 import { productPlaceholder } from '@assets/placeholders';
-import {ROUTES} from "@utils/routes";
+import { ROUTES } from "@utils/routes";
 
 interface ProductProps {
   product: Product;
   className?: string;
   lang: string;
 }
-function RenderPopupOrAddToCart({ data , lang}: { data: Product , lang:string}) {
-  const { t } = useTranslation(lang ,'common');
+function RenderPopupOrAddToCart({ data, lang }: { data: Product, lang: string }) {
+  const { t } = useTranslation(lang, 'common');
   const { id, quantity, product_type } = data ?? {};
   const { width } = useWindowSize();
   const { openModal } = useModalAction();
@@ -47,7 +47,7 @@ function RenderPopupOrAddToCart({ data , lang}: { data: Product , lang:string}) 
   }
   return <AddToCart data={data} lang={lang} />;
 }
-const ProductList: React.FC<ProductProps> = ({ product, className,lang }) => {
+const ProductList: React.FC<ProductProps> = ({ product, className, lang }) => {
   const { name, image, unit, slug, product_type } = product ?? {};
   const { openModal } = useModalAction();
   const { t } = useTranslation('common');
@@ -93,8 +93,8 @@ const ProductList: React.FC<ProductProps> = ({ product, className,lang }) => {
 
       <div className="col-span-4 ">
         <Link
-            href={`/${lang}${ROUTES.PRODUCTS}/${slug}`}
-            className="text-skin-purple text-sm leading-5 min-h-[40px] line-clamp-2 mb-1.5 hover:text-skin-primary"
+          href={`/${lang}${ROUTES.PRODUCTS}/${slug}`}
+          className="text-skin-purple text-sm leading-5 min-h-[40px] line-clamp-2 mb-1.5 hover:text-skin-primary"
         >
           {name}
         </Link>
@@ -104,9 +104,9 @@ const ProductList: React.FC<ProductProps> = ({ product, className,lang }) => {
             {product_type === 'variable' ? `${minPrice} - ${maxPrice}` : price}
           </span>
           {basePrice && (
-              <del className="text-sm text-gray-400 text-opacity-70">
-                {basePrice}
-              </del>
+            <del className="text-sm text-gray-400 text-opacity-70">
+              {basePrice}
+            </del>
           )}
         </div>
 

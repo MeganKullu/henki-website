@@ -1,6 +1,6 @@
 import React, { TextareaHTMLAttributes } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 export interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   className?: string;
@@ -43,9 +43,8 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
       {label && (
         <label
           htmlFor={name}
-          className={`block ${
-            labelClassName || 'text-brand-dark opacity-70'
-          } font-normal text-13px lg:text-sm leading-none mb-3 cursor-pointer`}
+          className={`block ${labelClassName || 'text-brand-dark opacity-70'
+            } font-normal text-13px lg:text-sm leading-none mb-3 cursor-pointer`}
         >
           {t(label)}
         </label>

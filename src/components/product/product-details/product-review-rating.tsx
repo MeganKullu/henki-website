@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import ReviewCard from '@components/cards/review-card';
 import ReviewForm from '@components/common/form/review-form';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 const data = [
   {

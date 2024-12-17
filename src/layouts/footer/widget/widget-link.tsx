@@ -1,6 +1,6 @@
 import Heading from '@components/ui/heading';
 import Link from '@components/ui/link';
-import { useTranslation } from 'src/app/i18n/client';
+
 
 interface Props {
   className?: string;
